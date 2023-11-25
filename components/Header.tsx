@@ -10,8 +10,8 @@ const Header = () => {
   const isUser = false;
 
   return (
-    <header className="relative min-h-12 text-teal-900 border-b-2 border-bottom-teal-500">
-      <div className="container mx-auto">
+    <header className="relative min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
+      <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
           <Link
@@ -21,23 +21,32 @@ const Header = () => {
             FoodSwift
           </Link>
 
-          <ul className="hidden md:flex md:items-center md:gap-4">
+          <ul className="hidden md:flex items-center gap-4 capitalize text-[var(--primary-text-color)] text-[20px]">
             {navLinks.map(({ id, name, url }) => (
               <li key={id}>
-                <Link href={url} className=" md:py-4">
+                <Link
+                  href={url}
+                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
+                >
                   {name}
                 </Link>
               </li>
             ))}
             {!isUser ? (
               <li>
-                <Link href="/login" className=" md:py-4">
+                <Link
+                  href="/login"
+                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
+                >
                   Login
                 </Link>
               </li>
             ) : (
               <li>
-                <Link href="/orders" className="md:py-4">
+                <Link
+                  href="/orders"
+                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
+                >
                   Orders
                 </Link>
               </li>

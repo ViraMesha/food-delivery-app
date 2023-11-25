@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lato.className}>
+      <body className={`color-[var(--primary-text-color)] ${lato.className}`}>
         <Notification />
         <Header />
         {children}

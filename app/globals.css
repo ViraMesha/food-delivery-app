@@ -34,3 +34,37 @@
 .trans {
   @apply transition-all duration-500 ease-in-out delay-0;
 }
+
+@layer components {
+  .linkUnderlineHover {
+    position: relative;
+  }
+
+  .linkUnderlineHover::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-text-color);
+    transform-origin: 100% 50%;
+    transition: all 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform: scaleY(1);
+    transform: scaleZ(1);
+    will-change: transform;
+  }
+
+  .linkUnderlineHover:hover::before {
+    width: 100%;
+    transform-origin: 100% 0;
+    transform: scaleX(1);
+    transform: scaleY(1);
+    transform: scaleZ(1);
+  }
+}
+
+.wrapper {
+  @apply container px-4 mx-auto;
+}
