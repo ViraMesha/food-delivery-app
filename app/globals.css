@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* color variables */
+    --accent-color: #eaf2f5;
+    --primary-text-color: #141414;
+    --secondary-text-color: #007676;
+    --light-text-color: #fff;
+    --primary-color: #fff;
+    --secondary-color: #007676;
+    --alpha-secondary-color: rgba(0, 118, 118, 0.2);
+    --discount-color: #e71a1c;
+    --card-hover-bg-color: #f9f9f9;
+    --border-color: #f9f9f9;
+    --box-shadow-color: var(--accent-color);
+    --shadow: rgba(0, 0, 0, 0.05);
+    --box-shadow: rgba(0, 0, 0, 0.25);
+    --discount-banner-background-overlay: linear-gradient(
+      rgba(0, 118, 118, 0.8),
+      rgba(0, 118, 118, 0.8)
+    );
+    --phone-app-shadow: #c7e1eb;
+    --alpha-primary-color: rgba(255, 255, 255, 0.5);
+    --rating-color: #ffa800;
+
+    /* transition curves */
+    --transition-curve: cubic-bezier(0.36, -0.21, 0.16, 1.97);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.trans {
+  @apply transition-all duration-500 ease-in-out delay-0;
 }
