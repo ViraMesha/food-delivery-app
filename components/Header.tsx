@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { navLinks } from "@/lib/data";
+import { headerContent } from "@/lib/data";
 
 import Cart from "./Cart";
 import Menu from "./Menu";
@@ -9,9 +9,11 @@ const Header = () => {
   //TODO:Clean later
   const isUser = false;
 
+  const { navLinks } = headerContent;
+
   return (
-    <header className="relative min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
-      <div className="container mx-auto px-4">
+    <header className="relative py-3 md:min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
+      <div className="wrapper">
         <nav className="flex justify-between items-center">
           {/* Logo */}
           <Link
@@ -21,7 +23,7 @@ const Header = () => {
             FoodSwift
           </Link>
 
-          <ul className="hidden md:flex items-center gap-4 capitalize text-[var(--primary-text-color)] text-[20px]">
+          <ul className="hidden md:flex items-center flex-wrap gap-4 capitalize text-[var(--primary-text-color)] text-[20px]">
             {navLinks.map(({ id, name, url }) => (
               <li key={id}>
                 <Link

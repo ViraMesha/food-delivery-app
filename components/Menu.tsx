@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 
-import { mobLinks } from "@/lib/data";
+import { headerContent } from "@/lib/data";
 
 import Cart from "./Cart";
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
+  const { mobNavLinks } = headerContent;
 
   //TODO:Clean later
   const isUser = false;
@@ -50,7 +51,7 @@ const Menu = () => {
               : ""
           } trans`}
         >
-          {mobLinks.map(({ id, name, url }) => (
+          {mobNavLinks.map(({ id, name, url }) => (
             <li key={id}>
               <Link
                 href={url}

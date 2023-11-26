@@ -24,12 +24,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`color-[var(--primary-text-color)] ${lato.className}`}>
+    <html lang="en" className="h-full">
+      <body
+        className={`h-full color-[var(--primary-text-color)] ${lato.className}`}
+      >
         <Notification />
-        <Header />
-        {children}
-        <Footer />
+        <div className="overflow-x-clip flex flex-col justify-between min-h-[94.5%]">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
