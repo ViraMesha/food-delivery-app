@@ -1,3 +1,11 @@
+import { Featured, Hero, Offer } from "@/components";
+
 export default function Home() {
-  return <p>Hello world!</p>;
+  return (
+    <>
+      <Hero />
+      <Featured />
+      <Offer />
+    </>
+  );
 }
