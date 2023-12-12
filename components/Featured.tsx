@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { featuredContent } from "@/lib/data";
 
-import pizzaImg from "../public/temp/pizza.png";
-
 const Featured = () => {
   return (
     <div className="w-screen overflow-x-scroll text-[var(--secondary-text-color)] ">
@@ -16,7 +14,7 @@ const Featured = () => {
             className="w-screen h-[60vh] flex flex-col items-center justify-between py-4 hover:bg-[var(--accent-color)] trans"
           >
             {/* Image Container */}
-            <div className="relative flex-1 w-full hover:rotate-[60deg] trans">
+            <div className="relative flex-1 w-full hover:scale-110 trans">
               <Image src={img} alt="Pizza" fill className="object-contain" />
             </div>
             {/* Text container */}
