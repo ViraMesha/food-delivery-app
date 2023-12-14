@@ -13,8 +13,8 @@ import slide1 from "../public/slide1.jpg";
 import slide2 from "../public/slide2.jpg";
 import slide3 from "../public/slide3.jpg";
 import hamburgerImg from "../public/temp/hamburger.png";
+import pastaImg from "../public/temp/pasta.png";
 import pizzaImg from "../public/temp/pizza.png";
-import pastaImg from "../public/temp/spaghetti.png";
 
 export const headerContent = {
   mobNavLinks: [
@@ -162,69 +162,6 @@ export const featuredContent = [
   },
   {
     id: "3",
-    title: "Crispy Chicken burger",
-    desc: "crispy breaded chicken fillet with tomato, pickled cucumber, onion, 1000 Islands sauce and mustard-honey sauce",
-    img: hamburgerImg,
-    price: 20.22,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
-  },
-  {
-    id: "4",
-    title: "Pizza Beef and Crispy",
-    desc: "Mozarella, Sweet pepper, Tomatoes, Pickled cucumbers, BBQ sauce, Crispy onion, Beef",
-    img: pizzaImg,
-    price: 11.32,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
-  },
-  {
-    id: "5",
-    title: "Pasta Carbonara 270g",
-    desc: "Garlic oil, noodles, ham, cream, Parmesan cheese",
-    img: pastaImg,
-    price: 15.98,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
-  },
-  {
-    id: "6",
     title: "Crispy Chicken burger",
     desc: "crispy breaded chicken fillet with tomato, pickled cucumber, onion, 1000 Islands sauce and mustard-honey sauce",
     img: hamburgerImg,
