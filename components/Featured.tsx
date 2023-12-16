@@ -4,7 +4,7 @@ import { featuredContent } from "@/lib/data";
 
 const Featured = () => {
   return (
-    <div className="w-screen overflow-auto overscroll-x-contain text-[var(--secondary-text-color)]">
+    <section className="w-screen overflow-auto overscroll-x-contain text-[var(--secondary-text-color)]">
       {/* Products' list wrapper */}
       <ul className="w-max flex">
         {/* Single item */}
@@ -29,7 +29,7 @@ const Featured = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
