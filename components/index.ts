@@ -3,6 +3,7 @@ import Hero from "./Home/Hero";
 import Offer from "./Home/Offer";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
+import Logo from "./Logo";
 import NavbarMd from "./NavbarMd";
 import NavbarSm from "./NavbarSm";
 import Notification from "./Notification";
@@ -16,4 +17,5 @@ export {
   NavbarSm,
   Notification,
   Offer,
+  Logo,
 };

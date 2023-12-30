@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "usehooks-ts";
 
+import { containerVars, menuVars, mobileLinkVars } from "@/constants";
 import { headerContent } from "@/lib/data";
 
 import Cart from "./Cart";
@@ -17,7 +19,7 @@ const NavbarSm = () => {
   const isUser = false;
 
   const toggleMenu = () => {
-    setOpen(!open);
+    setOpen((prevOpen) => !prevOpen);
   };
 
   useEffect(() => {
@@ -43,49 +45,73 @@ const NavbarSm = () => {
           }`}
         ></span>
       </button>
-      {open && (
-        <ul
-          className={`${
-            open
-              ? "absolute z-[5] top-0 left-0 bg-teal-500 text-white h-[calc(100vh-36px)] w-full pt-40 flex flex-col items-center gap-8 text-2xl"
-              : ""
-          } trans`}
-        >
-          {mobNavLinks.map(({ id, name, url }) => (
-            <li key={id}>
-              <Link
-                href={url}
-                onClick={toggleMenu}
-                className="pb-2 linkUnderlineHover"
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
-          {!isUser ? (
-            <li>
-              <Link
-                href="/login"
-                onClick={toggleMenu}
-                className="pb-2 linkUnderlineHover"
-              >
-                Login
-              </Link>
-            </li>
-          ) : (
-            <li>
-              <Link
-                href="/orders"
-                onClick={toggleMenu}
-                className="pb-2 linkUnderlineHover"
-              >
-                Orders
-              </Link>
-            </li>
-          )}
-          <Cart toggleMenu={toggleMenu} />
-        </ul>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={menuVars}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className={`${
+              open
+                ? "origin-top absolute z-[5] top-0 left-0 bg-teal-500 text-white h-[calc(100vh-36px)] w-full pt-40 text-2xl flex flex-col items-center gap-8"
+                : ""
+            } trans`}
+          >
+            <motion.ul
+              variants={containerVars}
+              initial="initial"
+              animate="open"
+              exit="initial"
+              className="flex flex-col items-center gap-8"
+            >
+              {mobNavLinks.map(({ id, name, url }) => (
+                <motion.li
+                  variants={mobileLinkVars}
+                  key={id}
+                  className="overflow-hidden"
+                >
+                  <Link
+                    href={url}
+                    onClick={toggleMenu}
+                    className="pb-2 linkUnderlineHover"
+                  >
+                    {name}
+                  </Link>
+                </motion.li>
+              ))}
+              {!isUser ? (
+                <motion.li
+                  variants={mobileLinkVars}
+                  className="overflow-hidden"
+                >
+                  <Link
+                    href="/login"
+                    onClick={toggleMenu}
+                    className="pb-2 linkUnderlineHover"
+                  >
+                    Login
+                  </Link>
+                </motion.li>
+              ) : (
+                <motion.li
+                  variants={mobileLinkVars}
+                  className="overflow-hidden"
+                >
+                  <Link
+                    href="/orders"
+                    onClick={toggleMenu}
+                    className="pb-2 linkUnderlineHover"
+                  >
+                    Orders
+                  </Link>
+                </motion.li>
+              )}
+            </motion.ul>
+            <Cart toggleMenu={toggleMenu} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

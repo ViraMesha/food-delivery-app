@@ -1,19 +1,12 @@
-import Link from "next/link";
-
-import { NavbarMd, NavbarSm } from "..";
+import { Logo, NavbarMd, NavbarSm } from "..";
 
 const Header = () => {
   return (
     <header className="relative py-3 md:min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
-      <div className="wrapper">
+      <div className="max-w-[1536px] px-4 w-full">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <Link
-            href="/"
-            className="relative z-10 font-black text-[25px] md:text-[35px] leading-normal"
-          >
-            FoodSwift
-          </Link>
+          <Logo />
           {/* Tablet-Desktop menu */}
           <NavbarMd />
           {/* Mobile menu */}

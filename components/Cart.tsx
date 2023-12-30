@@ -7,7 +7,7 @@ type CartProps = {
 
 const Cart = ({ toggleMenu }: CartProps) => {
   return (
-    <li>
+    <li className="list-none">
       <Link href="/cart" onClick={toggleMenu} className="md:py-4 block md:px-2">
         <FaShoppingCart
           fill="var(--secondary-text-color)"
