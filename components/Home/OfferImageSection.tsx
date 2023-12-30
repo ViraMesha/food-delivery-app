@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-
-import burger from "../public/burger.png";
+import burger from "@images/burger.png";
 
 export const OfferImageSection = () => {
   return (

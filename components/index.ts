@@ -1,5 +1,8 @@
-import Featured from "./Featured";
-import Hero from "./Hero";
-import Offer from "./Offer";
+import Featured from "./Home/Featured";
+import Hero from "./Home/Hero";
+import Offer from "./Home/Offer";
+import Footer from "./ui/Footer";
+import Header from "./ui/Header";
+import Notification from "./Notification";
 
-export { Featured, Hero, Offer };
+export { Featured, Footer, Header, Hero, Notification, Offer };

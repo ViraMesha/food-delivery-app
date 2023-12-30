@@ -6,15 +6,14 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-
-import appleStoreImg from "../public/apple-store.svg";
-import googlePlayImg from "../public/google-play.svg";
-import slide1 from "../public/slide1.jpg";
-import slide2 from "../public/slide2.jpg";
-import slide3 from "../public/slide3.jpg";
-import hamburgerImg from "../public/temp/hamburger.png";
-import pastaImg from "../public/temp/pasta.png";
-import pizzaImg from "../public/temp/pizza.png";
+import appleStoreImg from "@images/apple-store.svg";
+import googlePlayImg from "@images/google-play.svg";
+import slide1 from "@images/slide1.jpg";
+import slide2 from "@images/slide2.jpg";
+import slide3 from "@images/slide3.jpg";
+import hamburgerImg from "@images/temp/hamburger.png";
+import pastaImg from "@images/temp/pasta.png";
+import pizzaImg from "@images/temp/pizza.png";
 
 export const headerContent = {
   mobNavLinks: [

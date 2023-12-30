@@ -4,7 +4,7 @@ import React from "react";
 
 import { footerContent } from "@/lib/data";
 
-import Copyright from "./ui/Copyright";
+import Copyright from "./Copyright";
 
 const Footer = () => {
   const {

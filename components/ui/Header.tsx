@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { headerContent } from "@/lib/data";
 
-import Cart from "./Cart";
-import Menu from "./Menu";
+import Cart from "../Cart";
+import Menu from "../Menu";
 
 const Header = () => {
   //TODO:Clean later

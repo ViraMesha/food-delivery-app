@@ -1,4 +1,5 @@
-import CountDown from "./CountDown";
+import CountDown from "../CountDown";
+
 import { OfferImageSection } from "./OfferImageSection";
 
 const Offer = () => {
