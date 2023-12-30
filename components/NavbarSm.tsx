@@ -8,7 +8,7 @@ import { headerContent } from "@/lib/data";
 
 import Cart from "./Cart";
 
-const Menu = () => {
+const NavbarSm = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
   const { mobNavLinks } = headerContent;
@@ -90,4 +90,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default NavbarSm;

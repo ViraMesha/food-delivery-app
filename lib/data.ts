@@ -52,7 +52,7 @@ export const headerContent = {
     {
       id: "id-3",
       name: "Contact",
-      url: "/",
+      url: "/contact",
     },
   ],
 };

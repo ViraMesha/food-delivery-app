@@ -1,16 +1,8 @@
 import Link from "next/link";
 
-import { headerContent } from "@/lib/data";
-
-import Cart from "../Cart";
-import Menu from "../Menu";
+import { NavbarMd, NavbarSm } from "..";
 
 const Header = () => {
-  //TODO:Clean later
-  const isUser = false;
-
-  const { navLinks } = headerContent;
-
   return (
     <header className="relative py-3 md:min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
       <div className="wrapper">
@@ -22,42 +14,11 @@ const Header = () => {
           >
             FoodSwift
           </Link>
-
-          <ul className="hidden md:flex items-center flex-wrap gap-4 capitalize text-[var(--primary-text-color)] text-[20px]">
-            {navLinks.map(({ id, name, url }) => (
-              <li key={id}>
-                <Link
-                  href={url}
-                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
-            {!isUser ? (
-              <li>
-                <Link
-                  href="/login"
-                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
-                >
-                  Login
-                </Link>
-              </li>
-            ) : (
-              <li>
-                <Link
-                  href="/orders"
-                  className="py-4 px-2 hover:text-[var(--secondary-text-color)] trans"
-                >
-                  Orders
-                </Link>
-              </li>
-            )}
-            <Cart />
-          </ul>
+          {/* Tablet-Desktop menu */}
+          <NavbarMd />
           {/* Mobile menu */}
           <div className="md:hidden">
-            <Menu />
+            <NavbarSm />
           </div>
         </nav>
       </div>

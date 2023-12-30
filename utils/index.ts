@@ -1,0 +1,1 @@
+export { isActivePathname } from "./isActivePathname";
