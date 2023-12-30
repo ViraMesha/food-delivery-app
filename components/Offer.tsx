@@ -1,12 +1,7 @@
-import Image from "next/image";
-
-import burger from "../public/burger.png";
-
 import CountDown from "./CountDown";
+import { OfferImageSection } from "./OfferImageSection";
 
-type Props = {};
-
-const Offer = (props: Props) => {
+const Offer = () => {
   return (
     <section className="bg-black h-screen flex flex-col justify-between gap-5 md:flex-row text-white">
       {/* Text container */}
@@ -24,9 +19,7 @@ const Offer = (props: Props) => {
         </button>
       </div>
       {/* Section container */}
-      <div className="flex-1 w-full relative">
-        <Image src={burger} alt="" fill className="object-contain" />
-      </div>
+      <OfferImageSection />
     </section>
   );
 };
