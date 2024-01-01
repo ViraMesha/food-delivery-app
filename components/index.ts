@@ -1,6 +1,7 @@
 import Featured from "./Home/Featured";
 import Hero from "./Home/Hero";
 import Offer from "./Home/Offer";
+import Menu from "./Menu/Menu";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import Logo from "./Logo";
@@ -13,9 +14,10 @@ export {
   Footer,
   Header,
   Hero,
+  Logo,
+  Menu,
   NavbarMd,
   NavbarSm,
   Notification,
   Offer,
-  Logo,
 };

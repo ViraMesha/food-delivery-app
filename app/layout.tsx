@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`h-full color-[var(--primary-text-color)] ${lato.className}`}
       >
         <Notification />
-        <div className="overflow-x-clip flex flex-col justify-between min-h-[100%]">
+        <div className="overflow-x-clip flex flex-col min-h-[100%]">
           <Header />
           <main>{children}</main>
           <Footer />

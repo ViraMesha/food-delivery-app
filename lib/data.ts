@@ -11,8 +11,11 @@ import googlePlayImg from "@images/google-play.svg";
 import slide1 from "@images/slide1.jpg";
 import slide2 from "@images/slide2.jpg";
 import slide3 from "@images/slide3.jpg";
+import burgerImg from "@images/temp/burger.jpg";
 import hamburgerImg from "@images/temp/hamburger.png";
+import pasta1Img from "@images/temp/pasta.jpg";
 import pastaImg from "@images/temp/pasta.png";
+import pizza1Img from "@images/temp/pizza.jpg";
 import pizzaImg from "@images/temp/pizza.png";
 
 export const headerContent = {
@@ -179,5 +182,32 @@ export const featuredContent = [
         additinalPrice: 4,
       },
     ],
+  },
+];
+
+export const menuItems: MenuItem[] = [
+  {
+    id: "1",
+    slug: "pastas",
+    title: "Italian Pasta",
+    desc: "Delicious pasta dishes made with love.",
+    img: pasta1Img.src,
+    color: "white",
+  },
+  {
+    id: "2",
+    slug: "burgers",
+    title: "Burgers Delight",
+    desc: "Juicy burgers that will satisfy your cravings.",
+    img: burgerImg.src,
+    color: "black",
+  },
+  {
+    id: "3",
+    slug: "pizzas",
+    title: "Pizza Paradise",
+    desc: "Authentic pizzas with a variety of toppings.",
+    img: pizza1Img.src,
+    color: "white",
   },
 ];
