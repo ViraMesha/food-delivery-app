@@ -4,9 +4,9 @@ import React from "react";
 
 import { footerContent } from "@/lib/data";
 
-import Copyright from "./Copyright";
+import { Copyright } from ".";
 
-const Footer = () => {
+export const Footer = () => {
   const {
     socialLinks,
     downloadLinks,
@@ -86,5 +86,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

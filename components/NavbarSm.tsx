@@ -8,9 +8,9 @@ import { useWindowSize } from "usehooks-ts";
 import { containerVars, menuVars, mobileLinkVars } from "@/constants";
 import { headerContent } from "@/lib/data";
 
-import Cart from "./Cart";
+import { Cart } from "./Cart";
 
-const NavbarSm = () => {
+export const NavbarSm = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
   const { mobNavLinks } = headerContent;
@@ -115,5 +115,3 @@ const NavbarSm = () => {
     </>
   );
 };
-
-export default NavbarSm;

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { featuredContent } from "@/lib/data";
 
-const Featured = () => {
+export const Featured = () => {
   return (
     <section className="w-screen overflow-auto overscroll-x-contain text-[var(--secondary-text-color)]">
       {/* Products' list wrapper */}
@@ -33,4 +33,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+

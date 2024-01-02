@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <Tilt style={{ height: "100%" }}>
       <Link
@@ -15,4 +15,3 @@ const Logo = () => {
   );
 };
 
-export default Logo;

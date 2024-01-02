@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BiSolidHeart } from "react-icons/bi";
 
-const Copyright = () => {
+export const Copyright = () => {
   return (
     <div className="pt-7 mt-7 md:mt-14 md:pt-10 text-gray-500 text-center">
       <p className="text-center items-center mx-auto text-sm">
@@ -26,5 +26,3 @@ const Copyright = () => {
     </div>
   );
 };
-
-export default Copyright;

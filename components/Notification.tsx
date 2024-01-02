@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 
-const Notification = () => {
+export const Notification = () => {
   return (
     <Marquee autoFill pauseOnHover>
       <p className="bg-teal-700 p-2 text-white text-center text-sm md:text-base">
@@ -11,5 +11,3 @@ const Notification = () => {
     </Marquee>
   );
 };
-
-export default Notification;

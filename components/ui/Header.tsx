@@ -1,6 +1,8 @@
-import { Logo, NavbarMd, NavbarSm } from "..";
+import { NavbarMd, NavbarSm } from "..";
 
-const Header = () => {
+import { Logo } from ".";
+
+export const Header = () => {
   return (
     <header className="relative py-3 md:min-h-[80px] text-[var(--secondary-text-color)] bg-[var(--accent-color)] flex justify-between items-center">
       <div className="max-w-[1536px] px-4 w-full">
@@ -18,5 +20,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

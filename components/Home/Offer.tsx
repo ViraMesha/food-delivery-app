@@ -1,8 +1,8 @@
-import CountDown from "../CountDown";
+import { CountDown } from "..";
 
-import { OfferImageSection } from "./OfferImageSection";
+import { OfferImageSection } from ".";
 
-const Offer = () => {
+export const Offer = () => {
   return (
     <section className="bg-black h-screen flex flex-col justify-between gap-5 md:flex-row text-white">
       {/* Text container */}
@@ -24,5 +24,3 @@ const Offer = () => {
     </section>
   );
 };
-
-export default Offer;

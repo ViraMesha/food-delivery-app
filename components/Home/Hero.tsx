@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { heroContent } from "@/lib/data";
 
-const Hero = () => {
+export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -46,5 +46,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { headerContent } from "@/lib/data";
 import { isActivePathname } from "@/utils";
 
-import Cart from "./Cart";
+import { Cart } from "./Cart";
 
-const NavbarMd = () => {
+export const NavbarMd = () => {
   //TODO:Clean later
   const isUser = false;
   const pathname = usePathname() || "/";
@@ -128,5 +128,3 @@ const NavbarMd = () => {
     </ul>
   );
 };
-
-export default NavbarMd;

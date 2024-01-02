@@ -5,7 +5,7 @@ type CartProps = {
   toggleMenu?: () => void;
 };
 
-const Cart = ({ toggleMenu }: CartProps) => {
+export const Cart = ({ toggleMenu }: CartProps) => {
   return (
     <li className="list-none">
       <Link href="/cart" onClick={toggleMenu} className="md:py-4 block md:px-2">
@@ -17,5 +17,3 @@ const Cart = ({ toggleMenu }: CartProps) => {
     </li>
   );
 };
-
-export default Cart;
