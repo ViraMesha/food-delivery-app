@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
-import { Footer, Header, Notification } from "@/components";
+import { Notification } from "@/components";
+import { Footer, Header } from "@/components/ui";
 
 import "./globals.css";
 
