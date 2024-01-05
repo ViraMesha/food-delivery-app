@@ -4,5 +4,4 @@ type MenuItem = {
   title: string;
   desc?: string;
   img?: string;
-  color: string;
 };

@@ -192,7 +192,6 @@ export const menuItems: MenuItem[] = [
     title: "Italian Pasta",
     desc: "Delicious pasta dishes made with love.",
     img: pasta1Img.src,
-    color: "white",
   },
   {
     id: "2",
@@ -200,7 +199,6 @@ export const menuItems: MenuItem[] = [
     title: "Burgers Delight",
     desc: "Juicy burgers that will satisfy your cravings.",
     img: burgerImg.src,
-    color: "black",
   },
   {
     id: "3",
@@ -208,6 +206,5 @@ export const menuItems: MenuItem[] = [
     title: "Pizza Paradise",
     desc: "Authentic pizzas with a variety of toppings.",
     img: pizza1Img.src,
-    color: "white",
   },
 ];
