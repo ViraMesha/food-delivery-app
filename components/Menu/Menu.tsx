@@ -13,7 +13,7 @@ export const Menu = () => {
               key={id}
               className="relative w-[25.5rem] h-[19rem] md:w-[17rem] lg:h-[22.5rem] rounded-2xl overflow-clip p-[1.5rem] b-white trans shadow-2xl lg:hover:translate-y-[20px] before:opacity-[1] lg:hover:before:opacity-[1] group before:absolute before:top-0 before:left-0 before:block before:w-full before:h-full before:rounded-[15px] before:bg-[rgba(0,0,0,0.6)] before:z-2 before:trans lg:before:opacity-0"
             >
-              <Link href={slug}>
+              <Link href={`/menu/${slug}`}>
                 {img && (
                   <div>
                     <Image
