@@ -1,7 +1,13 @@
-import React from "react";
+import PizzasList from "@/components/MenuCategory/PizzasList";
 
 const CategoryPage = () => {
-  return <div>CategoryPage</div>;
+  return (
+    <section>
+      <div className="wrapper">
+        <PizzasList />
+      </div>
+    </section>
+  );
 };
 
 export default CategoryPage;
