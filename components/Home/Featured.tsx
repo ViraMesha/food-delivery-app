@@ -8,7 +8,7 @@ export const Featured = () => {
       {/* Products' list wrapper */}
       <ul className="w-max flex">
         {/* Single item */}
-        {featuredContent.map(({ id, title, img, desc, price, options }) => (
+        {featuredContent.map(({ id, title, img, desc, price }) => (
           <li
             key={id}
             className="w-screen h-[70vh] flex flex-col items-center p-4 gap-5 hover:bg-[var(--accent-color)] trans md:w-[50vw] xl:w-[33vw] xl:h-[90vh]"
@@ -32,5 +32,3 @@ export const Featured = () => {
     </section>
   );
 };
-
-
