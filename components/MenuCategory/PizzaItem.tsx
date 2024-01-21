@@ -1,4 +1,17 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
+import Modal from "react-modal";
+
+// bind modal to body
+Modal.setAppElement("body");
+
+const modalStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+};
 
 type PizzaItemProps = {
   pizza: TPizza;
@@ -6,6 +19,14 @@ type PizzaItemProps = {
 
 const PizzaItem = ({ pizza }: PizzaItemProps) => {
   const { image, name, description, priceSm, priceMd, priceLg } = pizza;
+
+  // modal state
+  const [isOpenModal, setOpenModal] = useState(false);
+
+  const toggleModal = () => {
+    setOpenModal((prev) => !prev);
+  };
+
   return (
     <li>
       <article className="group py-2 px-4 xl:py-4 xl:px-2 rounded-xl">
@@ -36,10 +57,24 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
             Choose
           </button>
           {/* btn => visible (sm) - hidden (lg) */}
-          <button className="btn btn-sm gradient lg:hidden px-3 text-sm">
+          <button
+            className="btn btn-sm gradient lg:hidden px-3 text-sm"
+            onClick={toggleModal}
+          >
             starts at {priceSm}
           </button>
         </div>
+        {/* modal */}
+        {isOpenModal && (
+          <Modal
+            isOpen={isOpenModal}
+            style={modalStyles}
+            onRequestClose={toggleModal}
+            contentLabel="Pizza Modal"
+          >
+            modal
+          </Modal>
+        )}
       </article>
     </li>
   );
