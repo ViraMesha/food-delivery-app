@@ -31,6 +31,7 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
     <li>
       <article className="group py-2 px-4 xl:py-4 xl:px-2 rounded-xl">
         <Image
+          onClick={toggleModal}
           className="lg:group-hover:translate-y-3 trans mb-8 cursor-pointer"
           src={image}
           alt={name}
@@ -39,7 +40,7 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
           priority
         />
         {/* Title */}
-        <div>
+        <div onClick={toggleModal}>
           <h3 className="text-xl font-bold mb-3 capitalize cursor-pointer">
             {name}
           </h3>
@@ -53,7 +54,10 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
             starts at {priceSm}
           </span>
           {/* btn => hidden (sm) - visible (lg) */}
-          <button className="hidden lg:flex gradient text-white rounded-lg btn-sm font-semibold text-sm">
+          <button
+            onClick={toggleModal}
+            className="hidden lg:flex gradient text-white rounded-lg btn-sm font-semibold text-sm"
+          >
             Choose
           </button>
           {/* btn => visible (sm) - hidden (lg) */}
@@ -71,8 +75,15 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
             style={modalStyles}
             onRequestClose={toggleModal}
             contentLabel="Pizza Modal"
+            className="bg-white w-full h-full border-red-50 lg:max-w-[900px] lg:max-h-[600px] lg:rounded-[30px] lg:fixed lg:top-[50%] lg:left-[50%] translate-x-[-50%] translate-y-[-50%]"
           >
-            modal
+            {/* close modal icon */}
+            <div
+              onClick={toggleModal}
+              className="absolute z-30 right-2 top-2 hover:scale-110 trans cursor-pointer"
+            >
+              <IoCloseOutline className="text-4xl text-[--secondary-text-color]" />
+            </div>
           </Modal>
         )}
       </article>
