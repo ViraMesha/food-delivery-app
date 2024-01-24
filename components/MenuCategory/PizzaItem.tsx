@@ -4,6 +4,8 @@ import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import Modal from "react-modal";
 
+import PizzaDetails from "./PizzaDetails";
+
 // bind modal to body
 Modal.setAppElement("body");
 
@@ -84,6 +86,11 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
             >
               <IoCloseOutline className="text-4xl text-[--secondary-text-color]" />
             </div>
+            <PizzaDetails
+              pizza={pizza}
+              toggleModal={toggleModal}
+              isOpenModal={isOpenModal}
+            />
           </Modal>
         )}
       </article>
