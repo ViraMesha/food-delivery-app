@@ -77,7 +77,7 @@ const PizzaItem = ({ pizza }: PizzaItemProps) => {
             style={modalStyles}
             onRequestClose={toggleModal}
             contentLabel="Pizza Modal"
-            className="bg-white w-full h-full border-red-50 lg:max-w-[900px] lg:max-h-[600px] lg:rounded-[30px] lg:fixed lg:top-[50%] lg:left-[50%] translate-x-[-50%] translate-y-[-50%]"
+            className="bg-white w-full h-full border-red-50 lg:max-w-[900px] lg:max-h-[600px] lg:rounded-[30px] lg:fixed lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%]"
           >
             {/* close modal icon */}
             <div
