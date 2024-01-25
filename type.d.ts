@@ -22,3 +22,6 @@ type TPizza = {
   priceLg: number;
   toppings: Topping[];
 };
+
+type TSize = "small" | "medium" | "large";
+type TCrust = "traditional" | "thin";

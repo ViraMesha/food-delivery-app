@@ -11,8 +11,9 @@ type PizzaDetailsProps = {
   isOpenModal: boolean;
 };
 
-type TSize = "small" | "medium" | "large";
-type TCrust = "traditional" | "thin";
+type TTopping = {
+  price: number;
+};
 
 const PizzaDetails = ({
   pizza,
@@ -22,7 +23,7 @@ const PizzaDetails = ({
   const { priceSm, priceMd, priceLg, image, name } = pizza;
   const [size, setSize] = useState<TSize>("small");
   const [crust, setCrust] = useState<TCrust>("traditional");
-  const [toppings, setToppings] = useState([]);
+  const [toppings, setToppings] = useState<TTopping[] | []>([]);
   const [toppingPrice, setToppingPrice] = useState(0);
   const [price, setPrice] = useState(0);
 
@@ -74,7 +75,7 @@ const PizzaDetails = ({
         </div>
       </div>
       {/* details */}
-      <div className="bg-teal-100 flex flex-col flex-1">
+      <div className="flex flex-col flex-1">
         <div className="flex-1 p-2 text-center lg:text-left">
           <div className="flex-1 bg-white overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white pr-2">
             {/* name */}
@@ -94,7 +95,7 @@ const PizzaDetails = ({
                 <span>{crust} crust</span>
               </div>
             </div>
-            <SizeSelection />
+            <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             <CrustSelection />
             <span>Choose topping</span>
             <ul>
