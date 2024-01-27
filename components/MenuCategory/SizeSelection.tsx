@@ -29,7 +29,7 @@ const SizeSelection = ({ pizza, size, setSize }: SizeSelectionProps) => {
             name="size"
             value="small"
             checked={size === "small"}
-            onChange={(e) => setSize("small")}
+            onChange={() => setSize("small")}
             className="appearance-none"
           />
           Small
@@ -52,7 +52,7 @@ const SizeSelection = ({ pizza, size, setSize }: SizeSelectionProps) => {
             name="size"
             value="medium"
             checked={size === "medium"}
-            onChange={(e) => setSize("medium")}
+            onChange={() => setSize("medium")}
             className="appearance-none"
           />
           Medium
@@ -75,7 +75,7 @@ const SizeSelection = ({ pizza, size, setSize }: SizeSelectionProps) => {
             name="size"
             value="large"
             checked={size === "large"}
-            onChange={(e) => setSize("large")}
+            onChange={() => setSize("large")}
             className="appearance-none"
           />
           Large
