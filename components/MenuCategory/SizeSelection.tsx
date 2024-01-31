@@ -22,7 +22,7 @@ const SizeSelection = ({ pizza, size, setSize }: SizeSelectionProps) => {
               size === "small"
                 ? "border-2 border-[var(--secondary-text-color)] p-[2px] rounded-full"
                 : "border-transparent filter saturate-[.1]"
-            }`}
+            } mb-1`}
           />
           <input
             type="radio"

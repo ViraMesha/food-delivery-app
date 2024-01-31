@@ -81,7 +81,7 @@ const PizzaDetails = ({
             {/* name */}
             <div className="font-semibold">
               <h3 className="capitalize text-3xl mb-1">{name}</h3>
-              <div className="bg-yellow-200 mb-6 text-lg font-medium">
+              <div className="mb-6 text-lg font-medium">
                 <span>
                   {size === "small"
                     ? "25 cm"
@@ -96,8 +96,8 @@ const PizzaDetails = ({
               </div>
             </div>
             <SizeSelection pizza={pizza} size={size} setSize={setSize} />
-            <CrustSelection />
-            <span>Choose topping</span>
+            <CrustSelection crust={crust} setCrust={setCrust} />
+            <span className="mb-4 text-xl font-semibold">Choose topping</span>
             <ul>
               {toppings?.map((topping, index) => (
                 <Topping key={index} />
