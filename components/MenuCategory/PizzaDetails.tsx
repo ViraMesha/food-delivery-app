@@ -11,21 +11,19 @@ type PizzaDetailsProps = {
   isOpenModal: boolean;
 };
 
-type TTopping = {
-  price: number;
-};
-
 const PizzaDetails = ({
   pizza,
   toggleModal,
   isOpenModal,
 }: PizzaDetailsProps) => {
-  const { priceSm, priceMd, priceLg, image, name } = pizza;
+  const { priceSm, priceMd, priceLg, image, name, toppings } = pizza;
   const [size, setSize] = useState<TSize>("small");
   const [crust, setCrust] = useState<TCrust>("traditional");
-  const [toppings, setToppings] = useState<TTopping[] | []>([]);
   const [toppingPrice, setToppingPrice] = useState(0);
   const [price, setPrice] = useState(0);
+  const [additionalToppings, setAdditionalToppings] = useState<Topping[] | []>(
+    []
+  );
 
   useEffect(() => {
     switch (size) {
@@ -98,9 +96,14 @@ const PizzaDetails = ({
             <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             <CrustSelection crust={crust} setCrust={setCrust} />
             <span className="mb-4 text-xl font-semibold">Choose topping</span>
-            <ul>
+            <ul className="flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start">
               {toppings?.map((topping, index) => (
-                <Topping key={index} />
+                <Topping
+                  topping={topping}
+                  additionalToppings={additionalToppings}
+                  setAdditionalToppings={setAdditionalToppings}
+                  key={index}
+                />
               ))}
             </ul>
           </div>
