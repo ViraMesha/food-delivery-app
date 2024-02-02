@@ -57,7 +57,7 @@ const PizzaDetails = ({
   }, [toppings]);
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8">
+    <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full lg:p-8">
       {/* top */}
       <div className="lg:flex-1 flex justify-center items-center">
         {/* pizza image */}
@@ -109,7 +109,7 @@ const PizzaDetails = ({
           </div>
         </div>
         {/* add to cart btn */}
-        <div className="h-full flex items-center px-2 lg:items-end">
+        <div className="h-full flex items-center px-2 lg:items-end pb-5 lg:pb-0">
           <button
             type="button"
             className="btn btn-lg gradient w-full flex justify-center gap-x-2"
