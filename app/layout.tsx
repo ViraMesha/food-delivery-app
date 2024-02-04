@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
 import { Notification } from "@/components";
-import { Footer, Header } from "@/components/ui";
+import { CartMobileIcon, Footer, Header } from "@/components/ui";
 
 import "./globals.css";
 
@@ -30,6 +30,7 @@ export default function RootLayout({
         <Notification />
         <div className="overflow-x-clip flex flex-col min-h-[100%]">
           <Header />
+          <CartMobileIcon />
           <main>{children}</main>
           <Footer />
         </div>

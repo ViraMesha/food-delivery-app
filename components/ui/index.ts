@@ -1,3 +1,4 @@
+export { CartMobileIcon } from "./CartMobileIcon";
 export { Copyright } from "./Copyright";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
