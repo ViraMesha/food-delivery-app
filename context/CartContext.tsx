@@ -1,6 +1,16 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
+type AddToCartParams = {
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  additionalToppings: Topping[];
+  size: TSize;
+  crust: TCrust;
+};
+
 type CartContextProps = {
   children: React.ReactNode;
 };
@@ -11,6 +21,15 @@ type CartContextI = {
 
 type CartActionsContextI = {
   toggleModal: () => void;
+  addToCart: ({
+    id,
+    image,
+    name,
+    price,
+    additionalToppings,
+    size,
+    crust,
+  }: AddToCartParams) => void;
 };
 
 const CartContext = createContext<CartContextI | null>(null);
@@ -18,14 +37,27 @@ const CartActionsContext = createContext<CartActionsContextI | null>(null);
 
 export const CartContextProvider = ({ children }: CartContextProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const toggleModal = () => {
     setIsOpen(() => !isOpen);
   };
 
+  const addToCart = ({
+    id,
+    image,
+    name,
+    price,
+    additionalToppings,
+    size,
+    crust,
+  }: AddToCartParams) => {
+    console.log("size", size);
+  };
+
   return (
     <CartContext.Provider value={{ isOpen }}>
-      <CartActionsContext.Provider value={{ toggleModal }}>
+      <CartActionsContext.Provider value={{ toggleModal, addToCart }}>
         {children}
       </CartActionsContext.Provider>
     </CartContext.Provider>

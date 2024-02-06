@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import { useCartActionsContext } from "@/context/CartContext";
 
 import CrustSelection from "./CrustSelection";
 import SizeSelection from "./SizeSelection";
@@ -16,7 +19,7 @@ const PizzaDetails = ({
   toggleModal,
   isOpenModal,
 }: PizzaDetailsProps) => {
-  const { priceSm, priceMd, priceLg, image, name, toppings } = pizza;
+  const { priceSm, priceMd, priceLg, image, name, toppings, id } = pizza;
   const [size, setSize] = useState<TSize>("small");
   const [crust, setCrust] = useState<TCrust>("traditional");
   const [toppingPrice, setToppingPrice] = useState(0);
@@ -24,6 +27,8 @@ const PizzaDetails = ({
   const [additionalToppings, setAdditionalToppings] = useState<Topping[] | []>(
     []
   );
+
+  const { addToCart } = useCartActionsContext();
 
   useEffect(() => {
     switch (size) {
@@ -111,6 +116,17 @@ const PizzaDetails = ({
         {/* add to cart btn */}
         <div className="h-full flex items-center px-2 lg:items-end pb-5 lg:pb-0">
           <button
+            onClick={() =>
+              addToCart({
+                id,
+                image,
+                name,
+                price,
+                additionalToppings,
+                size,
+                crust,
+              })
+            }
             type="button"
             className="btn btn-lg gradient w-full flex justify-center gap-x-2"
           >
