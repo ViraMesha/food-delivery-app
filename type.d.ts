@@ -25,3 +25,17 @@ type TPizza = {
 
 type TSize = "small" | "medium" | "large";
 type TCrust = "traditional" | "thin";
+
+type AddToCartParams = {
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  additionalToppings: Topping[];
+  size: TSize;
+  crust: TCrust;
+};
+
+type TCartItems = AddToCartParams & {
+  amount: number;
+};
