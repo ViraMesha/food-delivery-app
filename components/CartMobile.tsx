@@ -1,7 +1,7 @@
 "use client";
 import { useCartContext } from "@/context/CartContext";
 
-import { CartItem, CartTop } from ".";
+import { CartBottom, CartItem, CartTop } from ".";
 
 const CartMobile = () => {
   const { isOpen, cartItems } = useCartContext();
@@ -14,7 +14,7 @@ const CartMobile = () => {
     >
       <CartTop />
       <div
-        className={`px-4 flex flex-col gap-y-4 py-2 mr-8 mt-8 h-[60vh] bg-blue-200 overflow-y-scroll scrollbar-thin scrollbar-thumb-red-300 ${
+        className={`px-4 flex flex-col gap-y-4 py-2 mr-8 mt-8 h-[60vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-red-300 ${
           cartItems.length > 3
             ? "scrollbar-track-white/10"
             : "scrollbar-track-transparent"
@@ -24,6 +24,7 @@ const CartMobile = () => {
           <CartItem pizza={pizza} key={index} />
         ))}
       </div>
+      <CartBottom />
     </div>
   );
 };
