@@ -59,8 +59,6 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
     setCartItems([...cartItems, newItem]);
   };
 
-  console.log(cartItems);
-
   return (
     <CartContext.Provider value={{ isOpen, cartItems }}>
       <CartActionsContext.Provider value={{ toggleModal, addToCart }}>
