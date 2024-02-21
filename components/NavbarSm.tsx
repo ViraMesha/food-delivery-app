@@ -108,7 +108,7 @@ export const NavbarSm = () => {
                 </motion.li>
               )}
             </motion.ul>
-            <Cart toggleMenu={toggleMenu} />
+            <Cart />
           </motion.div>
         )}
       </AnimatePresence>
