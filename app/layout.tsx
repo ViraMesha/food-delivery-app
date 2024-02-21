@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
-import { Notification } from "@/components";
+import { CartDesktop, Notification } from "@/components";
 import CartMobile from "@/components/CartMobile";
 import { CartMobileIcon, Footer, Header } from "@/components/ui";
 import { CartContextProvider } from "@/context/CartContext";
@@ -36,6 +36,7 @@ export default function RootLayout({
             <CartMobileIcon />
             <CartMobile />
             <main>{children}</main>
+            <CartDesktop />
             <Footer />
           </div>
         </CartContextProvider>

@@ -14,7 +14,7 @@ const CartMobile = () => {
     >
       <CartTop />
       <div
-        className={`px-4 flex flex-col gap-y-4 py-2 mr-8 mt-8 h-[60vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-red-300 ${
+        className={`px-4 flex flex-col gap-y-4 py-2 mr-8 mt-8 h-[60vh] overflow-y-scroll scrollbar-thin -red-300 ${
           cartItems.length > 3
             ? "scrollbar-track-white/10"
             : "scrollbar-track-transparent"
