@@ -35,7 +35,7 @@ export const CartItem = ({ pizza }: CartItemProps) => {
               </div>
               {/* pizza amount */}
               <span className="font-semibold flex flex-1 max-w-[30px] justify-center items-center text-sm">
-                1
+                {amount}
               </span>
               {/* increase quantity */}
               <div className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full">

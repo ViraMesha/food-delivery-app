@@ -56,7 +56,27 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
       amount: 1,
     };
 
-    setCartItems([...cartItems, newItem]);
+    const cartItemIndex = cartItems.findIndex(
+      (item) =>
+        item.id === id &&
+        item.price === price &&
+        item.size === size &&
+        // check if additional array is equal
+        JSON.stringify(item.additionalToppings) ===
+          JSON.stringify(additionalToppings) &&
+        item.crust === crust
+    );
+
+    if (cartItemIndex === -1) {
+      setCartItems([...cartItems, newItem]);
+    } else {
+      const newCartItems = [...cartItems];
+      newCartItems[cartItemIndex].amount += 1;
+      setCartItems(newCartItems);
+    }
+
+    // open the cart everytime you add a product
+    setIsOpen(true);
   };
 
   return (
