@@ -22,6 +22,8 @@ type CartActionsContextI = {
     crust,
   }: AddToCartParams) => void;
   removeCartItem: ({ id, price, crust }: RemoveCartItemProps) => void;
+  increaseAmount: (id: number, price: number) => void;
+  decreaseAmount: (id: number, price: number) => void;
 };
 
 const CartContext = createContext<CartContextI | null>(null);
@@ -92,10 +94,42 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
     }
   };
 
+  const increaseAmount = (id: number, price: number) => {
+    const itemIndex = cartItems.findIndex(
+      (item) => item.id === id && item.price === price
+    );
+
+    if (itemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems[itemIndex].amount += 1;
+      setCartItems(newCartItems);
+    }
+  };
+
+  const decreaseAmount = (id: number, price: number) => {
+    const itemIndex = cartItems.findIndex(
+      (item) => item.id === id && item.price === price
+    );
+
+    if (itemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      if (newCartItems[itemIndex].amount > 1) {
+        newCartItems[itemIndex].amount -= 1;
+      }
+      setCartItems(newCartItems);
+    }
+  };
+
   return (
     <CartContext.Provider value={{ isOpen, cartItems }}>
       <CartActionsContext.Provider
-        value={{ toggleModal, addToCart, removeCartItem }}
+        value={{
+          toggleModal,
+          addToCart,
+          removeCartItem,
+          increaseAmount,
+          decreaseAmount,
+        }}
       >
         {children}
       </CartActionsContext.Provider>

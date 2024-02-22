@@ -9,7 +9,8 @@ type CartItemProps = {
 };
 
 export const CartItem = ({ pizza }: CartItemProps) => {
-  const { removeCartItem } = useCartActionsContext();
+  const { removeCartItem, increaseAmount, decreaseAmount } =
+    useCartActionsContext();
   const { id, image, name, crust, size, price, amount, additionalToppings } =
     pizza;
   return (
@@ -34,7 +35,10 @@ export const CartItem = ({ pizza }: CartItemProps) => {
             {/* quantity controls */}
             <div className="flex items-center gap-x-1">
               {/* decrease quantity */}
-              <div className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full">
+              <div
+                onClick={() => decreaseAmount(id, price)}
+                className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full"
+              >
                 <BiMinus />
               </div>
               {/* pizza amount */}
@@ -42,7 +46,10 @@ export const CartItem = ({ pizza }: CartItemProps) => {
                 {amount}
               </span>
               {/* increase quantity */}
-              <div className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full">
+              <div
+                onClick={() => increaseAmount(id, price)}
+                className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full"
+              >
                 <BiPlus />
               </div>
             </div>
