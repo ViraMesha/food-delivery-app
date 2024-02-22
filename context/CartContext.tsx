@@ -21,6 +21,7 @@ type CartActionsContextI = {
     size,
     crust,
   }: AddToCartParams) => void;
+  removeCartItem: ({ id, price, crust }: RemoveCartItemProps) => void;
 };
 
 const CartContext = createContext<CartContextI | null>(null);
@@ -79,9 +80,23 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
     setIsOpen(true);
   };
 
+  const removeCartItem = ({ id, price, crust }: RemoveCartItemProps) => {
+    const itemIndex = cartItems.findIndex(
+      (item) => item.id === id && item.price === price && item.crust === crust
+    );
+
+    if (itemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems.splice(itemIndex, 1);
+      setCartItems(newCartItems);
+    }
+  };
+
   return (
     <CartContext.Provider value={{ isOpen, cartItems }}>
-      <CartActionsContext.Provider value={{ toggleModal, addToCart }}>
+      <CartActionsContext.Provider
+        value={{ toggleModal, addToCart, removeCartItem }}
+      >
         {children}
       </CartActionsContext.Provider>
     </CartContext.Provider>

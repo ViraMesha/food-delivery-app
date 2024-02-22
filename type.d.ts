@@ -39,3 +39,9 @@ type AddToCartParams = {
 type TCartItems = AddToCartParams & {
   amount: number;
 };
+
+type RemoveCartItemProps = {
+  id: number;
+  price: number;
+  crust: TCrust;
+};

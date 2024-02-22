@@ -2,12 +2,16 @@ import Image from "next/image";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
 
+import { useCartActionsContext } from "@/context/CartContext";
+
 type CartItemProps = {
   pizza: TCartItems;
 };
 
 export const CartItem = ({ pizza }: CartItemProps) => {
-  const { image, name, crust, size, price, amount, additionalToppings } = pizza;
+  const { removeCartItem } = useCartActionsContext();
+  const { id, image, name, crust, size, price, amount, additionalToppings } =
+    pizza;
   return (
     <div className="select-none">
       <div className="flex gap-x-4 mb-2">
@@ -46,7 +50,10 @@ export const CartItem = ({ pizza }: CartItemProps) => {
         </div>
         <div className="flex flex-col justify-between">
           {/* remove item */}
-          <div className="text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 trans text-[var(--secondary-text-color)]">
+          <div
+            onClick={() => removeCartItem({ id, price, crust })}
+            className="text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 trans text-[var(--secondary-text-color)]"
+          >
             <IoCloseOutline />
           </div>
           {/* price */}
