@@ -8,6 +8,8 @@ type CartContextProps = {
 type CartContextI = {
   isOpen: boolean;
   cartItems: TCartItems[];
+  totalPrice: number;
+  totalAmount: number;
 };
 
 type CartActionsContextI = {
@@ -32,6 +34,11 @@ const CartActionsContext = createContext<CartActionsContextI | null>(null);
 export const CartContextProvider = ({ children }: CartContextProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<TCartItems[] | []>([]);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + Number(item.price) * item.amount,
+    0
+  );
+  const totalAmount = cartItems.reduce((acc, item) => acc + item.amount, 0);
 
   const toggleModal = () => {
     setIsOpen(() => !isOpen);
@@ -121,7 +128,9 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
   };
 
   return (
-    <CartContext.Provider value={{ isOpen, cartItems }}>
+    <CartContext.Provider
+      value={{ isOpen, cartItems, totalPrice, totalAmount }}
+    >
       <CartActionsContext.Provider
         value={{
           toggleModal,

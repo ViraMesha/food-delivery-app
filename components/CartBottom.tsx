@@ -18,7 +18,7 @@ Modal.setAppElement("body");
 
 export const CartBottom = () => {
   const { toggleModal } = useCartActionsContext();
-  const { cartItems } = useCartContext();
+  const { cartItems, totalPrice } = useCartContext();
 
   const [modal, setModal] = useState(false);
 
@@ -42,7 +42,7 @@ export const CartBottom = () => {
           {/* Total price */}
           <div className="flex items-center justify-between mb-6 text-lg font-semibold">
             <p>Total:</p>
-            <p>$320</p>
+            <p>${totalPrice.toFixed(2)}</p>
           </div>
           {/* btn */}
           <div className="flex flex-col gap-y-3">
