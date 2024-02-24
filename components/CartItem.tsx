@@ -77,7 +77,7 @@ export const CartItem = ({ pizza }: CartItemProps) => {
           <span className="font-semibold">Toppings:</span>{" "}
           {!additionalToppings.length && "None"}
         </div>
-        <ul>
+        <ul className="flex flex-wrap gap-2 py-1 justify-center lg:justify-start">
           {additionalToppings.map((topping, index) => (
             <li
               key={index}
