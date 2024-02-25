@@ -75,7 +75,7 @@ export const CartBottom = () => {
           >
             <IoCloseOutline className="text-4xl text-[var(--secondary-text-color)]" />
           </button>
-          <CheckoutDetails />
+          <CheckoutDetails setModal={setModal} />
         </Modal>
       )}
     </>

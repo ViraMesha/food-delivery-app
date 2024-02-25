@@ -26,6 +26,7 @@ type CartActionsContextI = {
   removeCartItem: ({ id, price, crust }: RemoveCartItemProps) => void;
   increaseAmount: (id: number, price: number) => void;
   decreaseAmount: (id: number, price: number) => void;
+  setCartItems: React.Dispatch<React.SetStateAction<TCartItems[] | []>>;
 };
 
 const CartContext = createContext<CartContextI | null>(null);
@@ -133,6 +134,7 @@ export const CartContextProvider = ({ children }: CartContextProps) => {
     >
       <CartActionsContext.Provider
         value={{
+          setCartItems,
           toggleModal,
           addToCart,
           removeCartItem,
