@@ -13,7 +13,9 @@ export const CheckoutDetails = ({ setModal }: Props) => {
     <div>
       <div className="lg:gap-x-8 h-full lg:px-12 lg:py-8">
         {/* title */}
-        <h2>Shipping & Checkout</h2>
+        <h2 className="mb-6 text-[20px] uppercase font-extrabold text-center lg:text-left pt-6 lg:pt-0">
+          Shipping & Checkout
+        </h2>
         <div className="h-[86vh] lg:h-[47.5vh] flex flex-col lg:flex-row lg:gap-x-4">
           {/* box 1 */}
           <div className="flex-1 h-full overflow-y-auto lg:overflow-visible py-4 px-8 lg:py-0 lg:px-0">
@@ -90,8 +92,23 @@ export const CheckoutDetails = ({ setModal }: Props) => {
             </div>
           </div>
           {/* box 2 */}
-          <div className="bg-blue-400 flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
-            Box 2
+          <div className="bg-blue-400/20 flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
+            <div>
+              <h3>Your order</h3>
+              {/* items */}
+              <ul className="overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-white-500 font-semibold">
+                {cartItems.map(({ name, amount, price }, index) => (
+                  <li key={index} className="flex justify-between text-[15px]">
+                    <div className="flex gap-x-2">
+                      <h3 className="capitalize">{name}</h3>
+                      <p>{amount > 1 && `x ${amount}`}</p>
+                    </div>
+
+                    <div>$ {(price * amount).toFixed(2)}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

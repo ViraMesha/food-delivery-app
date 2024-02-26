@@ -1,10 +1,11 @@
 "use client";
 import { BsHandbagFill } from "react-icons/bs";
 
-import { useCartActionsContext } from "@/context/CartContext";
+import { useCartActionsContext, useCartContext } from "@/context/CartContext";
 
 export const CartMobileIcon = () => {
   const { toggleModal } = useCartActionsContext();
+  const { totalAmount } = useCartContext();
 
   return (
     <div
@@ -16,7 +17,7 @@ export const CartMobileIcon = () => {
         className="text-white absolute bottom-3 right-4 gradient w-5 h-5 flex justify-center items-center rounded-full text-[13px]
       "
       >
-        10
+        {totalAmount}
       </span>
     </div>
   );
