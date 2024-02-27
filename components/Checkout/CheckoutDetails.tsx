@@ -92,7 +92,7 @@ export const CheckoutDetails = ({ setModal }: Props) => {
             </div>
           </div>
           {/* box 2 */}
-          <div className="bg-blue-400/20 flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
+          <div className="flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
             <div>
               <h3>Your order</h3>
               {/* items */}
