@@ -134,69 +134,66 @@ export const heroContent = [
   },
 ];
 
-export const featuredContent = [
+const toppings: Topping[] = [
   {
-    id: "1",
-    title: "Pizza Beef and Crispy",
-    desc: "Mozarella, Sweet pepper, Tomatoes, Pickled cucumbers, BBQ sauce, Crispy onion, Beef",
-    img: pizzaImg,
-    price: 11.32,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
+    image: toppingCherryImg.src,
+    name: "cherry tomatoes",
+    price: 2,
   },
   {
-    id: "2",
-    title: "Pasta Carbonara 270g",
-    desc: "Garlic oil, noodles, ham, cream, Parmesan cheese",
-    img: pastaImg,
-    price: 15.98,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
+    image: toppingCornImg.src,
+    name: "corn",
+    price: 2,
   },
   {
-    id: "3",
-    title: "Crispy Chicken burger",
-    desc: "crispy breaded chicken fillet with tomato, pickled cucumber, onion, 1000 Islands sauce and mustard-honey sauce",
-    img: hamburgerImg,
-    price: 20.22,
-    options: [
-      {
-        title: "Small",
-        additinalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additinalPrice: 2,
-      },
-      {
-        title: "Large",
-        additinalPrice: 4,
-      },
-    ],
+    image: toppingTomatoesImg.src,
+    name: "fresh tomatoes",
+    price: 2,
+  },
+  {
+    image: toppingJalapenoImg.src,
+    name: "jalapeno",
+    price: 2,
+  },
+  {
+    image: toppingParmesanImg.src,
+    name: "parmesan",
+    price: 2,
+  },
+];
+
+export const featuredContent: TPizza[] = [
+  {
+    id: 1,
+    name: "Pizza Beef and Crispy",
+    description:
+      "Mozarella, Sweet pepper, Tomatoes, Pickled cucumbers, BBQ sauce, Crispy onion, Beef",
+    image: pizzaImg.src,
+    priceSm: 9.99,
+    priceMd: 10.99,
+    priceLg: 11.99,
+    toppings,
+  },
+  {
+    id: 2,
+    name: "Pasta Carbonara 270g",
+    description: "Garlic oil, noodles, ham, cream, Parmesan cheese",
+    image: pastaImg.src,
+    priceSm: 11.99,
+    priceMd: 12.99,
+    priceLg: 13.99,
+    toppings,
+  },
+  {
+    id: 3,
+    name: "Crispy Chicken burger",
+    description:
+      "crispy breaded chicken fillet with tomato, pickled cucumber, onion, 1000 Islands sauce and mustard-honey sauce",
+    image: hamburgerImg.src,
+    priceSm: 20.22,
+    priceMd: 21.99,
+    priceLg: 22.99,
+    toppings,
   },
 ];
 
@@ -229,34 +226,6 @@ export const menuItems: MenuItem[] = [
   | Pizza data
   |==============================
 */
-
-const toppings: Topping[] = [
-  {
-    image: toppingCherryImg.src,
-    name: "cherry tomatoes",
-    price: 2,
-  },
-  {
-    image: toppingCornImg.src,
-    name: "corn",
-    price: 2,
-  },
-  {
-    image: toppingTomatoesImg.src,
-    name: "fresh tomatoes",
-    price: 2,
-  },
-  {
-    image: toppingJalapenoImg.src,
-    name: "jalapeno",
-    price: 2,
-  },
-  {
-    image: toppingParmesanImg.src,
-    name: "parmesan",
-    price: 2,
-  },
-];
 
 export const pizzas: TPizza[] = [
   {
