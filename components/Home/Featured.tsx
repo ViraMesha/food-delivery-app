@@ -47,7 +47,7 @@ export const Featured = () => {
                 <h2 className="text-3xl font-black capitalize">{name}</h2>
                 <p className="p-4 2xl:p-8 text-xl">{description}</p>
                 {/* price & btn */}
-                <div className="mb-6 flex items-center justify-between lg:gap-4">
+                <div className="mb-6 flex items-center justify-between lg:flex-col lg:gap-4">
                   {/* price => hidden (sm) - visible (lg) */}
                   <span className="hidden lg:flex  text-xl font-semibold">
                     starts at {priceSm}
