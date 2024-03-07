@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 
+import { useCartActionsContext } from "@/context/CartContext";
 import { featuredContent } from "@/lib/data";
 
 export const Featured = () => {
+  const { addToCart } = useCartActionsContext();
+
   return (
     <section className="w-screen overflow-auto overscroll-x-contain text-[var(--secondary-text-color)]">
       {/* Products' list wrapper */}

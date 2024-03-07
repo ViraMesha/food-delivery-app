@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import Modal from "react-modal";
+import { useToggle } from "usehooks-ts";
 
 import PizzaDetails from "./PizzaDetails";
 
@@ -21,13 +21,7 @@ type PizzaItemProps = {
 
 const PizzaItem = ({ pizza }: PizzaItemProps) => {
   const { image, name, description, priceSm, priceMd, priceLg } = pizza;
-
-  // modal state
-  const [isOpenModal, setOpenModal] = useState(false);
-
-  const toggleModal = () => {
-    setOpenModal((prev) => !prev);
-  };
+  const [isOpenModal, toggleModal, setOpenModal] = useToggle();
 
   return (
     <li>
