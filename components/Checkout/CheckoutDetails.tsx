@@ -179,7 +179,10 @@ export const CheckoutDetails = ({ setModal }: Props) => {
                   <div className="border rounded-lg flex flex-col mb-4 p-4 h-full">
                     <div className="overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-full py-2 pr-2">
                       <div className="flex justify-between">
-                        <span>Subtotal (3 items)</span>
+                        <span>
+                          Subtotal ({totalAmount}{" "}
+                          {totalAmount > 1 ? "items" : "item"})
+                        </span>
                         <span>$81.75</span>
                       </div>
                       <div className="flex justify-between">

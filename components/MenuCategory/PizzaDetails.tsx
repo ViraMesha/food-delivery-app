@@ -20,6 +20,7 @@ const PizzaDetails = ({
   isOpenModal,
 }: PizzaDetailsProps) => {
   const { priceSm, priceMd, priceLg, image, name, toppings, id } = pizza;
+  console.log(pizza);
   const [size, setSize] = useState<TSize>("small");
   const [crust, setCrust] = useState<TCrust>("traditional");
   const [toppingPrice, setToppingPrice] = useState(0);
