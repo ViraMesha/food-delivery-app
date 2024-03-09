@@ -149,7 +149,12 @@ export const CheckoutDetails = ({ setModal }: Props) => {
                       Your order
                     </h3>
                     {/* items */}
-                    <ul className="overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-full py-2 pr-2">
+                    <ul
+                      className={`font-semibold flex flex-col gap-y-4 h-full py-2 pr-2 ${
+                        cartItems.length >= 3 &&
+                        "overflow-y-scroll scrollbar-thumb-gray-200 scrollbar-track-white scrollbar-thin"
+                      }`}
+                    >
                       {cartItems.map(
                         ({ name, amount, price, id, crust }, index) => (
                           <li
@@ -177,26 +182,26 @@ export const CheckoutDetails = ({ setModal }: Props) => {
                     </ul>
                   </div>
                   <div className="border rounded-lg flex flex-col mb-4 p-4 h-full">
-                    <div className="overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-full py-2 pr-2">
+                    <div className="font-semibold flex flex-col gap-y-4 h-full py-2 pr-2">
                       <div className="flex justify-between">
                         <span>
                           Subtotal ({totalAmount}{" "}
                           {totalAmount > 1 ? "items" : "item"})
                         </span>
-                        <span>$81.75</span>
+                        <span>${totalPrice}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Service cost</span>
-                        <span>$81.75</span>
+                        <span>$0.00</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Delivery cost</span>
-                        <span>$81.75</span>
+                        <span className="text-green-500 capitalize">Free!</span>
                       </div>
                       <hr />
                       <div className="flex justify-between">
                         <span className="capitalize">Total (incl. vat)</span>
-                        <span>$81.75</span>
+                        <span className="font-bold">${totalPrice}</span>
                       </div>
                     </div>
                   </div>
