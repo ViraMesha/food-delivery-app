@@ -1,11 +1,10 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import Modal from "react-modal";
 
 import { useCartActionsContext, useCartContext } from "@/context/CartContext";
-
-import { CheckoutDetails } from "./Checkout";
 
 const modalStyles = {
   overlay: {
@@ -22,17 +21,8 @@ export const CartBottom = () => {
 
   const [modal, setModal] = useState(false);
 
-  const openModal = () => {
-    setModal(true);
-  };
-
   const closeModal = () => {
     setModal(false);
-  };
-
-  const handleCheckoutBtnClick = () => {
-    toggleModal();
-    openModal();
   };
 
   return (
@@ -46,12 +36,13 @@ export const CartBottom = () => {
           </div>
           {/* btn */}
           <div className="flex flex-col gap-y-3">
-            <button
-              onClick={handleCheckoutBtnClick}
+            <Link
+              href="/checkout"
+              onClick={toggleModal}
               className="btn btn-lg gradient font-semibold flex justify-center"
             >
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       ) : (
@@ -75,7 +66,6 @@ export const CartBottom = () => {
           >
             <IoCloseOutline className="text-4xl text-[var(--secondary-text-color)]" />
           </button>
-          <CheckoutDetails setModal={setModal} />
         </Modal>
       )}
     </>

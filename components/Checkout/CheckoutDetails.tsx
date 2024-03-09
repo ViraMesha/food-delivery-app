@@ -7,11 +7,7 @@ import { useCartActionsContext, useCartContext } from "@/context/CartContext";
 
 import successImg from "../../public/success-1.gif";
 
-type Props = {
-  setModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export const CheckoutDetails = ({ setModal }: Props) => {
+export const CheckoutDetails = () => {
   const { cartItems, totalPrice, totalAmount } = useCartContext();
   const { setCartItems } = useCartActionsContext();
   const [successMsg, setSuccessMsg] = useState(false);
@@ -37,15 +33,12 @@ export const CheckoutDetails = ({ setModal }: Props) => {
         setSuccessMsg(false);
         // clear cart
         setCartItems([]);
-
-        //close modal
-        setModal(false);
       }, 5000);
 
       //clear timer
       return () => clearTimeout(timer);
     }
-  }, [setCartItems, setModal, successMsg]);
+  }, [setCartItems, successMsg]);
 
   return (
     <>
