@@ -57,12 +57,12 @@ export const CheckoutDetails = () => {
           ) : (
             <div className="lg:gap-x-8 h-full lg:px-12 lg:py-8">
               {/* title */}
-              <h2 className="mb-6 text-[20px] uppercase font-extrabold text-center lg:text-left pt-6 lg:pt-0">
+              <h2 className="mb-6 text-[20px] uppercase font-extrabold text-center pt-6 lg:pt-0">
                 Shipping & Checkout
               </h2>
               <div className="h-[86vh] lg:h-[65.5vh] flex flex-col lg:flex-row lg:gap-x-4">
                 {/* box 1 */}
-                <div className="flex-1 h-full overflow-y-auto lg:overflow-visible py-4 px-8 lg:py-0 lg:px-0">
+                <div className="h-full overflow-y-auto lg:overflow-visible py-4 px-8 lg:py-0 lg:px-0">
                   {/* input wrapper */}
                   <div className="flex flex-col gap-4 h-full">
                     {/* first & last name */}
@@ -136,7 +136,7 @@ export const CheckoutDetails = () => {
                   </div>
                 </div>
                 {/* box 2 */}
-                <div className="flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
+                <div className="flex-1 h-full flex flex-col justify-between pt-3 px-8 lg:p-0">
                   <div className="border rounded-lg flex flex-col mb-4 p-4 h-full">
                     <h3 className="text-base font-extrabold uppercase mb-4 border-b pb-4">
                       Your order
@@ -156,7 +156,7 @@ export const CheckoutDetails = () => {
                           >
                             <div className="flex gap-x-2">
                               <h3 className="capitalize">{name}</h3>
-                              <p>{amount > 1 && `x ${amount}`}</p>
+                              <p>x {amount}</p>
                             </div>
 
                             <div>$ {(price * amount).toFixed(2)}</div>
