@@ -14,7 +14,7 @@ export const CartItem = ({ pizza }: CartItemProps) => {
   const { id, image, name, crust, size, price, amount, additionalToppings } =
     pizza;
   return (
-    <div className="select-none">
+    <li className="select-none">
       <div className="flex gap-x-4 mb-2">
         {/* image */}
         <div className="flex justify-center items-center">
@@ -88,6 +88,6 @@ export const CartItem = ({ pizza }: CartItemProps) => {
           ))}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };

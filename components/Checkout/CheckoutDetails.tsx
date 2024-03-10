@@ -6,13 +6,13 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useCartActionsContext, useCartContext } from "@/context/CartContext";
 
 import successImg from "../../public/success-1.gif";
+import { CartItem } from "..";
 
 export const CheckoutDetails = () => {
   const { cartItems, totalPrice, totalAmount } = useCartContext();
   const { setCartItems } = useCartActionsContext();
   const [successMsg, setSuccessMsg] = useState(false);
   const [count, setCount] = useState(5);
-  const { removeCartItem } = useCartActionsContext();
 
   useEffect(() => {
     if (successMsg) {
@@ -60,7 +60,7 @@ export const CheckoutDetails = () => {
               <h2 className="mb-6 text-[20px] uppercase font-extrabold text-center pt-6 lg:pt-0">
                 Shipping & Checkout
               </h2>
-              <div className="h-[86vh] lg:h-[65.5vh] flex flex-col lg:flex-row lg:gap-x-4">
+              <div className="h-[86vh] flex flex-col lg:flex-row lg:gap-x-4">
                 {/* box 1 */}
                 <div className="h-full overflow-y-auto lg:overflow-visible py-4 px-8 lg:py-0 lg:px-0">
                   {/* input wrapper */}
@@ -148,30 +148,10 @@ export const CheckoutDetails = () => {
                         "overflow-y-scroll scrollbar-thumb-gray-200 scrollbar-track-white scrollbar-thin"
                       }`}
                     >
-                      {cartItems.map(
-                        ({ name, amount, price, id, crust }, index) => (
-                          <li
-                            key={index}
-                            className="flex justify-between text-[15px]"
-                          >
-                            <div className="flex gap-x-2">
-                              <h3 className="capitalize">{name}</h3>
-                              <p>x {amount}</p>
-                            </div>
-
-                            <div>$ {(price * amount).toFixed(2)}</div>
-                            {/* remove item */}
-                            <div
-                              onClick={() =>
-                                removeCartItem({ id, price, crust })
-                              }
-                              className="text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 trans text-[var(--secondary-text-color)]"
-                            >
-                              <IoCloseOutline />
-                            </div>
-                          </li>
-                        )
-                      )}
+                      {" "}
+                      {cartItems.map((item, index) => (
+                        <CartItem pizza={item} key={index} />
+                      ))}
                     </ul>
                   </div>
                   <div className="border rounded-lg flex flex-col mb-4 p-4 h-full">
