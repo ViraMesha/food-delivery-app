@@ -35,7 +35,7 @@ const LoginPage = () => {
             />
             <span className="sm:whitespace-nowrap">Sign in with Google</span>
           </button>
-          <button className="flex items-center justify-start gap-4 btn btn-lg ring-1 ring-gray-300 w-fit md:w-full">
+          <button className="flex items-center justify-start gap-4 btn btn-lg ring-1 ring-gray-200 w-fit md:w-full">
             <Image
               src={facebookLogo}
               alt="Facebook logo"
