@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { menuItems } from "@/lib/data";
+type Props = {
+  menuItems: MenuItem[];
+};
 
-export const Menu = () => {
+export const Menu = ({ menuItems }: Props) => {
   return (
     <section className="py-10 md:py-20 xl:py-30 min-h-[calc(100vh - 80px)] md:min-h-[calc(100vh - 500px)]">
       <div className="wrapper">
