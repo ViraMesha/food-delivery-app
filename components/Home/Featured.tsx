@@ -2,15 +2,15 @@ import { featuredContent } from "@/lib/data";
 
 import { FeaturedItem } from ".";
 
-const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store",
-  });
+// const getData = async () => {
+//   const res = await fetch("http://localhost:3000/api/products", {
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) throw new Error("Failed!");
+//   if (!res.ok) throw new Error("Failed!");
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 export const Featured = async () => {
   // const featuredContent: TPizza[] = await getData();
