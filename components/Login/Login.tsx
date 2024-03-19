@@ -5,7 +5,11 @@ import facebookLogo from "../../public/facebook.png";
 import googleLogo from "../../public/google.svg.webp";
 import loginBG from "../../public/loginBg.jpeg";
 
-export const Login = () => {
+type Props = {
+  handleSignIn: () => void;
+};
+
+export const Login = ({ handleSignIn }: Props) => {
   return (
     <section className="p-10 h-[calc(100vh-6rem)] lg:h-[calc(100vh-7.6rem)] flex items-center justify-center">
       {/* BOX */}
@@ -25,7 +29,10 @@ export const Login = () => {
           <h1>
             Log into your account or create a new one using social buttons
           </h1>
-          <button className="flex items-center justify-start gap-4 btn btn-lg ring-1 ring-gray-200 w-fit md:w-full">
+          <button
+            className="flex items-center justify-start gap-4 btn btn-lg ring-1 ring-gray-200 w-fit md:w-full"
+            onClick={handleSignIn}
+          >
             <Image
               src={googleLogo}
               alt="Google logo"
