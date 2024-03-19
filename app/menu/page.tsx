@@ -1,4 +1,5 @@
 import { Menu } from "@/components/Menu";
+import { menuItems } from "@/lib/data";
 
 const getData = async () => {
   const res = await fetch("http://localhost:3000/api/categories", {
@@ -11,7 +12,7 @@ const getData = async () => {
 };
 
 const MenuPage = async () => {
-  const menuItems: MenuItem[] = await getData();
+  // const menuItems: MenuItem[] = await getData();
   return <Menu menuItems={menuItems} />;
 };
 
