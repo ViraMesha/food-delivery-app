@@ -8,10 +8,9 @@ import { headerContent } from "@/lib/data";
 import { isActivePathname } from "@/utils";
 
 import { Cart } from "./Cart";
+import UserLinksMd from "./UserLinksMd";
 
 export const NavbarMd = () => {
-  //TODO:Clean later
-  const isUser = false;
   const pathname = usePathname() || "/";
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
@@ -57,73 +56,7 @@ export const NavbarMd = () => {
           </li>
         );
       })}
-      {!isUser ? (
-        <li>
-          <Link
-            data-active={"/login" === pathname}
-            onMouseOver={() => setHoveredPath("/login")}
-            onMouseLeave={() => setHoveredPath(pathname)}
-            href="/login"
-            className={`py-4 px-2 trans relative ${
-              "/login" === pathname
-                ? "text-[var(--secondary-text-color)]"
-                : "text-[var(--primary-text-color)]"
-            } `}
-          >
-            Login
-            {"/login" === hoveredPath && (
-              <motion.div
-                className="absolute bottom-0 left-0 h-full bg-[var(--alpha-secondary-color)] rounded-md"
-                layoutId="navbar"
-                aria-hidden="true"
-                style={{
-                  width: "100%",
-                }}
-                transition={{
-                  type: "spring",
-                  bounce: 0.25,
-                  stiffness: 130,
-                  damping: 9,
-                  duration: 0.3,
-                }}
-              />
-            )}
-          </Link>
-        </li>
-      ) : (
-        <li>
-          <Link
-            href="/orders"
-            data-active={"/orders" === pathname}
-            onMouseOver={() => setHoveredPath("/orders")}
-            onMouseLeave={() => setHoveredPath(pathname)}
-            className={`py-4 px-2 trans relative ${
-              "/orders" === pathname
-                ? "text-[var(--secondary-text-color)]"
-                : "text-[var(--primary-text-color)]"
-            } `}
-          >
-            Orders
-            {"/orders" === hoveredPath && (
-              <motion.div
-                className="absolute bottom-0 left-0 h-full bg-[var(--alpha-secondary-color)] rounded-md"
-                layoutId="navbar"
-                aria-hidden="true"
-                style={{
-                  width: "100%",
-                }}
-                transition={{
-                  type: "spring",
-                  bounce: 0.25,
-                  stiffness: 130,
-                  damping: 9,
-                  duration: 0.3,
-                }}
-              />
-            )}
-          </Link>
-        </li>
-      )}
+      <UserLinksMd hoveredPath={hoveredPath} setHoveredPath={setHoveredPath} />
       <Cart />
     </ul>
   );

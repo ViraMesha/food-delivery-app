@@ -9,14 +9,12 @@ import { containerVars, menuVars, mobileLinkVars } from "@/constants";
 import { headerContent } from "@/lib/data";
 
 import { Cart } from "./Cart";
+import UserLinksSm from "./UserLinksSm";
 
 export const NavbarSm = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
   const { mobNavLinks } = headerContent;
-
-  //TODO:Clean later
-  const isUser = false;
 
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -80,33 +78,7 @@ export const NavbarSm = () => {
                   </Link>
                 </motion.li>
               ))}
-              {!isUser ? (
-                <motion.li
-                  variants={mobileLinkVars}
-                  className="overflow-hidden"
-                >
-                  <Link
-                    href="/login"
-                    onClick={toggleMenu}
-                    className="pb-2 linkUnderlineHover"
-                  >
-                    Login
-                  </Link>
-                </motion.li>
-              ) : (
-                <motion.li
-                  variants={mobileLinkVars}
-                  className="overflow-hidden"
-                >
-                  <Link
-                    href="/orders"
-                    onClick={toggleMenu}
-                    className="pb-2 linkUnderlineHover"
-                  >
-                    Orders
-                  </Link>
-                </motion.li>
-              )}
+              <UserLinksSm toggleMenu={toggleMenu} />
             </motion.ul>
             <Cart />
           </motion.div>
