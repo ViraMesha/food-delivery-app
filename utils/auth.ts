@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+import { getServerSession, NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
@@ -9,3 +9,6 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
+
+// Func to get data and status in server components and API
+export const getAuthSession = () => getServerSession(authOptions);
