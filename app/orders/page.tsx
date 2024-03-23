@@ -1,3 +1,4 @@
+"use client";
 import { Orders } from "@/components/Orders";
 
 const OrdersPage = () => {

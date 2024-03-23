@@ -6,6 +6,7 @@ import AuthProvider from "@/components/AuthProvider";
 import CartMobile from "@/components/CartMobile";
 import { CartMobileIcon, Footer, Header } from "@/components/ui";
 import { CartContextProvider } from "@/context/CartContext";
+import QueryProvider from "@/context/QueryProvider";
 
 import "./globals.css";
 
@@ -31,17 +32,19 @@ export default function RootLayout({
         className={`h-full color-[var(--primary-text-color)] ${lato.className}`}
       >
         <AuthProvider>
-          <Notification />
-          <CartContextProvider>
-            <div className="overflow-x-clip flex flex-col min-h-[100%]">
-              <Header />
-              <CartMobileIcon />
-              <CartMobile />
-              <main>{children}</main>
-              <CartDesktop />
-              <Footer />
-            </div>
-          </CartContextProvider>
+          <QueryProvider>
+            <Notification />
+            <CartContextProvider>
+              <div className="overflow-x-clip flex flex-col min-h-[100%]">
+                <Header />
+                <CartMobileIcon />
+                <CartMobile />
+                <main>{children}</main>
+                <CartDesktop />
+                <Footer />
+              </div>
+            </CartContextProvider>
+          </QueryProvider>
         </AuthProvider>
       </body>
     </html>
