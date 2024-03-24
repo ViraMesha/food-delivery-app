@@ -1,7 +1,18 @@
+import { MdEdit } from "react-icons/md";
+
 type Props = {
   orders: OrderT[];
+  isAdmin: Boolean | undefined;
 };
-export const Orders = ({ orders }: Props) => {
+
+export const Orders = ({ orders, isAdmin }: Props) => {
+  const handleUpdate = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const input = form.elements[0] as HTMLInputElement;
+    const status = input.value;
+  };
+
   return (
     <section className="p-10 h-[calc(100vh-6rem)] lg:h-[calc(100vh-7.6rem)]">
       <div className="wrapper">
@@ -27,7 +38,25 @@ export const Orders = ({ orders }: Props) => {
                 </td>
                 <td className="py-6 px-1">{price}</td>
                 <td className="hidden md:block">{products[0].name}</td>
-                <td className="py-6 px-1">{status}</td>
+                {isAdmin ? (
+                  <td className="py-6 px-1">
+                    <form
+                      action=""
+                      className="flex items-center justify-center gap-4"
+                      onSubmit={(e) => handleUpdate(e, id)}
+                    >
+                      <input
+                        placeholder={status}
+                        className="p-2 ring-1 ring-teal-800 rounded-md"
+                      />
+                      <button className="bg-teal-600 p-2 rounded-full">
+                        <MdEdit className="text-2xl text-white" />
+                      </button>
+                    </form>
+                  </td>
+                ) : (
+                  <td className="py-6 px-1">{status}</td>
+                )}
               </tr>
             ))}
           </tbody>
