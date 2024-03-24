@@ -45,3 +45,13 @@ type RemoveCartItemProps = {
   price: number;
   crust: TCrust;
 };
+
+type OrderT = {
+  id: string;
+  userEmail: string;
+  createdAt: Date;
+  price: number;
+  products: object[];
+  status: string;
+  intent_id?: string;
+};
