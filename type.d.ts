@@ -51,7 +51,7 @@ type OrderT = {
   userEmail: string;
   createdAt: Date;
   price: number;
-  products: object[];
+  products: TCartItems[];
   status: string;
   intent_id?: string;
 };

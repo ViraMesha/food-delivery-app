@@ -16,19 +16,18 @@ export const Orders = ({ orders }: Props) => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders.map(({ id, createdAt, price, products, status }) => (
               <tr
                 className="text-sm md:text-base bg-red-50 odd:bg-teal-50"
-                key={order.id}
+                key={id}
               >
-                <td className="hidden md:block py-6 px-1">125425</td>
-                <td className="py-6 px-1">15.03.2023</td>
-                <td className="py-6 px-1">86</td>
-                <td className="hidden md:block">
-                  Pasta Carbonara (2), Pizza Beef and Crispy(3), Crispy Chicken
-                  burger(2)
+                <td className="hidden md:block py-6 px-1">{id}</td>
+                <td className="py-6 px-1">
+                  {createdAt.toString().slice(0, 10)}
                 </td>
-                <td className="py-6 px-1">On the way (approx. 10 min)...</td>
+                <td className="py-6 px-1">{price}</td>
+                <td className="hidden md:block">{products[0].name}</td>
+                <td className="py-6 px-1">{status}</td>
               </tr>
             ))}
           </tbody>
