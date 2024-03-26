@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 import { CartDesktop, Notification } from "@/components";
 import AuthProvider from "@/components/AuthProvider";
@@ -9,6 +10,7 @@ import { CartContextProvider } from "@/context/CartContext";
 import QueryProvider from "@/context/QueryProvider";
 
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -42,6 +44,11 @@ export default function RootLayout({
                 <main>{children}</main>
                 <CartDesktop />
                 <Footer />
+                <ToastContainer
+                  position="bottom-right"
+                  theme="dark"
+                  autoClose={3000}
+                />
               </div>
             </CartContextProvider>
           </QueryProvider>

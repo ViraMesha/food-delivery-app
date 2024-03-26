@@ -1,5 +1,6 @@
 import { MdEdit } from "react-icons/md";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 
 type Props = {
   orders: OrderT[];
@@ -30,6 +31,7 @@ export const Orders = ({ orders, isAdmin }: Props) => {
     const input = form.elements[0] as HTMLInputElement;
     const status = input.value;
     mutation.mutate({ id, status });
+    toast.success("The order status has been changed!");
   };
 
   return (
