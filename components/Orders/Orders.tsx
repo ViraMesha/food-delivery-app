@@ -1,6 +1,6 @@
 import { MdEdit } from "react-icons/md";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Props = {
   orders: OrderT[];
@@ -50,7 +50,9 @@ export const Orders = ({ orders, isAdmin }: Props) => {
           <tbody>
             {orders.map(({ id, createdAt, price, products, status }) => (
               <tr
-                className="text-sm md:text-base bg-red-50 odd:bg-teal-50"
+                className={`${
+                  status !== "delivered" && "bg-red-100"
+                } text-sm md:text-base`}
                 key={id}
               >
                 <td className="hidden md:block py-6 px-1">{id}</td>
