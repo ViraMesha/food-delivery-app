@@ -20,7 +20,7 @@ const PizzaDetails = ({
   isOpenModal,
 }: PizzaDetailsProps) => {
   const { priceSm, priceMd, priceLg, image, name, toppings, id } = pizza;
-  console.log(pizza);
+
   const [size, setSize] = useState<TSize>("small");
   const [crust, setCrust] = useState<TCrust>("traditional");
   const [toppingPrice, setToppingPrice] = useState(0);
@@ -34,15 +34,15 @@ const PizzaDetails = ({
   useEffect(() => {
     switch (size) {
       case "small":
-        setPrice(parseFloat((priceSm + toppingPrice).toFixed(2)));
+        setPrice(parseFloat((+priceSm + +toppingPrice).toFixed(2)));
         break;
 
       case "medium":
-        setPrice(parseFloat((priceMd + toppingPrice).toFixed(2)));
+        setPrice(parseFloat((+priceMd + +toppingPrice).toFixed(2)));
         break;
 
       case "large":
-        setPrice(parseFloat((priceLg + toppingPrice).toFixed(2)));
+        setPrice(parseFloat((+priceLg + +toppingPrice).toFixed(2)));
         break;
 
       default:
