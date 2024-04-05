@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { useCartActionsContext } from "@/context/CartContext";
+import { convertStringToNumber } from "@/utils";
 
 import CrustSelection from "./CrustSelection";
 import SizeSelection from "./SizeSelection";
@@ -31,24 +32,29 @@ const PizzaDetails = ({
 
   const { addToCart } = useCartActionsContext();
 
+  const parsedPriceSm = convertStringToNumber(priceSm, 0);
+  const parsedPriceMd = convertStringToNumber(priceMd, 0);
+  const parsedPriceLg = convertStringToNumber(priceLg, 0);
+  const parsedToppingPrice = convertStringToNumber(toppingPrice, 0);
+
   useEffect(() => {
     switch (size) {
       case "small":
-        setPrice(parseFloat((+priceSm + +toppingPrice).toFixed(2)));
+        setPrice(parseFloat((parsedPriceSm + parsedToppingPrice).toFixed(2)));
         break;
 
       case "medium":
-        setPrice(parseFloat((+priceMd + +toppingPrice).toFixed(2)));
+        setPrice(parseFloat((parsedPriceMd + parsedToppingPrice).toFixed(2)));
         break;
 
       case "large":
-        setPrice(parseFloat((+priceLg + +toppingPrice).toFixed(2)));
+        setPrice(parseFloat((parsedPriceLg + parsedToppingPrice).toFixed(2)));
         break;
 
       default:
         console.log("Invalid size type");
     }
-  }, [priceLg, priceMd, priceSm, size, toppingPrice]);
+  }, [parsedPriceLg, parsedPriceMd, parsedPriceSm, parsedToppingPrice, size]);
 
   useEffect(() => {
     if (toppings.length > 0) {
