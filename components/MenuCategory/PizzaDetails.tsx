@@ -107,17 +107,24 @@ const PizzaDetails = ({
             </div>
             <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             <CrustSelection crust={crust} setCrust={setCrust} />
-            <span className="mb-4 text-xl font-semibold">Choose topping</span>
-            <ul className="flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start">
-              {toppings?.map((topping, index) => (
-                <Topping
-                  topping={topping}
-                  additionalToppings={additionalToppings}
-                  setAdditionalToppings={setAdditionalToppings}
-                  key={index}
-                />
-              ))}
-            </ul>
+            {toppings?.length > 0 && (
+              <>
+                {" "}
+                <span className="mb-4 text-xl font-semibold">
+                  Choose topping
+                </span>
+                <ul className="flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start">
+                  {toppings?.map((topping, index) => (
+                    <Topping
+                      topping={topping}
+                      additionalToppings={additionalToppings}
+                      setAdditionalToppings={setAdditionalToppings}
+                      key={index}
+                    />
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </div>
         {/* add to cart btn */}
